@@ -1,13 +1,28 @@
 {
-  "name": "ball-game",
   "private": true,
-  "version": "0.0.0",
+  "author": {
+    "name": "Doinel Atanasiu",
+    "email": "doinel1atanasiu@gmail.com",
+    "url": "https://business-link.d1a.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doinel1a/vite-vanilla-js"
+  },
   "type": "module",
+  "license": "MIT",
   "scripts": {
+    "postinstall": "npx husky install && npx playwright install",
+    "clean:dist": "npx rimraf dist",
+    "clean:report": "npx rimraf playwright-report",
+    "test:chrome": "npx playwright test --headed --project=chromium",
+    "test:firefox": "npx playwright test --headed --project=firefox",
+    "test:safari": "npx playwright test --headed --project=webkit",
+    "lint": "npx eslint --ext js ./src",
+    "lint:fix": "npx eslint --ext js ./src --fix",
     "dev": "vite --host",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "postAttachCommand": "npm run dev"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.8.1",
@@ -36,3 +51,4 @@
     "vite": "^4.4.9"
   }
 }
+
